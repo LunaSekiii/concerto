@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import ShareBackground from "../components/SharedBackground";
 
 /**
  * Home page
  */
 const Home = () => {
 	// get params
-	const { name } = useParams();
+	const { name = "HOME" } = useParams();
 
 	useEffect(() => {
 		// use per frame
@@ -25,7 +26,8 @@ const Home = () => {
 
 	return (
 		<div>
-			<h1>Home</h1>
+			<ShareBackground />
+			<h1>{name}</h1>
 			<div
 				onClick={() => {
 					window.open(

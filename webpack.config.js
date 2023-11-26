@@ -43,6 +43,10 @@ module.exports = (env) => ({
 				use: "ts-loader",
 			},
 			{
+				test: /\.less$/i,
+				use: ["style-loader", "css-loader", "less-loader"],
+			},
+			{
 				test: /\.css$/i,
 				use: [MiniCssExtractPlugin.loader, "css-loader"],
 			},
